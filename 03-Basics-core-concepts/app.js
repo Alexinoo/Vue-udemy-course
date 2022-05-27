@@ -2,11 +2,13 @@
 const app = Vue.createApp({
 
     // Has to be data - Takes in a function that Must return an object NOT an Array/String/Number
-    data : ()=>{
+    data (){
 
         return {
 
-            courseGoal : 'Finish the course' ,
+            courseGoal : 'Code Along',
+            courseGoalA : 'Finish the course and learn Vuex' ,
+            courseGoalB : 'Master Vue and build amazing Apps' ,
             vueLink: 'https://vuejs.org/'
          // Property courseGoal Can store anything ; [array] ,boolean(true) , string , number
 
@@ -18,18 +20,18 @@ const app = Vue.createApp({
         }
     } ,
 
-    // Methods : Takes in an object with user defined functions which aree callable to do something ; i.e either react to user events or perfoma calculations
+    // Methods : Takes in an object with user defined functions which are callable to do something ; i.e either react to user events or perfom calculations
 
     methods : {
 
-        outputGoal : ()=>{
+        outputGoal(){
 
-            const randomNumber = Math.random()
+            const randomNumber = Math.random();
 
             if( randomNumber < 0.5 ){
-                return 'Learn Vue !'
+                return this.courseGoalA;
             }else{
-                return 'Master Vue !'
+                return this.courseGoalB;
             }
         }
     }
