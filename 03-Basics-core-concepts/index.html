@@ -22,6 +22,9 @@
             
             <!--Vue scans for property courseGoal and returns the content of that property -->
             <p> {{ courseGoal  }}</p>
+
+            <!-- Use v-bind:href on html tags attributes - No {{}} needed between -->
+            <p>Learn more <a v-bind:href="vueLink" target="_blank">about Vue</a></p>
     </section>
 
         <script src="vue.global.js"></script>
