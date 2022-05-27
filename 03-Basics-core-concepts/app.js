@@ -6,8 +6,8 @@ const app = Vue.createApp({
 
         return {
 
-            courseGoal : 'Finish the course'
-
+            courseGoal : 'Finish the course' ,
+            vueLink: 'https://vuejs.org/'
          // Property courseGoal Can store anything ; [array] ,boolean(true) , string , number
 
          // courseGoal : string
