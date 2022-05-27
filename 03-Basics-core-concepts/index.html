@@ -23,6 +23,12 @@
             <!--Vue scans for property courseGoal and returns the content of that property -->
             <p> {{ courseGoal  }}</p>
 
+            <!--We can also use {{ outputGoal() }}  and invoke the method outputGoal() directly-->
+            <!-- We can also use {{ 1 + 1 }}  to perfom basic operations -->
+            <!-- We can also use {{ ( 0 < 10 )? 'true' : 'false' }} ternary operators to evaluate some statements-->
+
+            <p> {{ outputGoal()  }}</p>
+
             <!-- Use v-bind:href on html tags attributes - No {{}} needed between -->
             <p>Learn more <a v-bind:href="vueLink" target="_blank">about Vue</a></p>
     </section>
