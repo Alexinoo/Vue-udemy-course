@@ -6,7 +6,7 @@ const app = Vue.createApp({
 
         return {
 
-            courseGoal : 'Code Along',
+            courseGoal : '<h4>Code Along</h4>',
             courseGoalA : 'Finish the course and learn Vuex' ,
             courseGoalB : 'Master Vue and build amazing Apps' ,
             vueLink: 'https://vuejs.org/'
