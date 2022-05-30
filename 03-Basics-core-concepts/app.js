@@ -6,9 +6,10 @@ const app = Vue.createApp({
 
         return {
 
-            courseGoal : '<h4>Code Along</h4>',
+            courseGoal : 'Code Along',
             courseGoalA : 'Finish the course and learn Vuex' ,
             courseGoalB : 'Master Vue and build amazing Apps' ,
+            courseGoalC: '<h4>Welcome to the course</h4>' ,
             vueLink: 'https://vuejs.org/'
          // Property courseGoal Can store anything ; [array] ,boolean(true) , string , number
 
