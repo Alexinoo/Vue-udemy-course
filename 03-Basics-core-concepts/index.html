@@ -21,7 +21,15 @@
             <h2>My Course Goal</h2>
             
             <!--Vue scans for property courseGoal and returns the content of that property -->
-            <p v-html="courseGoal"></p>
+
+
+            <p>{{ courseGoal }}</p>
+
+
+            <!--    v-html directive - Render raw HTML content              
+              Security issues-  Circumvent cross site build attack protection-->
+
+            <p v-html="courseGoalC"></p>
 
             <!--We can also use {{ outputGoal() }}  and invoke the method outputGoal() directly-->
             <!-- We can also use {{ 1 + 1 }}  to perfom basic operations -->
