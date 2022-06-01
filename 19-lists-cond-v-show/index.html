@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Course Goals</h1>
+    </header>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+
+
+      <input type="text" v-model="enteredValue"/>      
+
+      <button @click="addGoal">Add Goal</button>
+
+
+
+      <!--  V-SHOW - Works standalone ; 
+        
+        -Not used with v-if or v-else-if
+
+        - v-show is used when you have multiple alternatives and you can use multiple v-shows
+
+        --DIFF WITH v-if
+
+        -v-if ADDS/REMOVE elements to/from the DOM
+
+        -v-show - Hides the element with Css by adding  a style of display:none property
+       -->
+
+
+      <p v-show="goals.length===0">No goals have been added yet - please start adding some!</p>
+
+
+
+      <!-- Check  if there is an item in goals array and render the ul list-->
+      <ul v-show="goals.length > 0 ">
+        <li>Goal</li>
+      </ul>
+
+    </section>
+  </body>
+</html>
