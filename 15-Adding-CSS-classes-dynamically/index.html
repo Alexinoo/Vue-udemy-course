@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Adding Css classes</h1>
+    </header>
+    <section id="styling">
+
+      <!-- 
+
+        Add in your Css styles
+        
+        .active {
+
+            border-color: red;
+            background-color: salmon;
+        }
+
+        Assign dynamically if the condition is met
+
+        use v-bind or :class  with class attribute 
+
+        THERE ARE ALTERNATIVE WAYS OF HOW WE CAN ACHIEVE THIS:
+
+        1 ) Using v-bind on class attribute  :class=" boxASelected ? 'demo active' : 'demo' "
+
+        2) Passing object  with css properties as keys and result of truthy/falsy as values
+            e.g   :class="{ demo : true , active : boxASelected }"
+
+
+        3) Remove the class demo since it's going to be true anyway and is not dynamically       bounded e.g.
+            class = "demo"
+            :class = "{active : boxASelected }"
+            Vue evaluates    :class = "{active : boxASelected }" and merges it with class = "demo"
+       -->
+
+      <div 
+      class="demo"
+      :class="{active : boxASelected }"
+       @click="boxSelected('A')"></div>
+
+      <div class="demo"
+       :class="{active : boxBSelected }"
+        @click="boxSelected('B')"></div>
+
+      <div class="demo"
+       :class="{active : boxCSelected }"
+        @click="boxSelected('C')"></div>
+    </section>
+  </body>
+</html>
