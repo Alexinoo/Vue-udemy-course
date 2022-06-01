@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Course Goals</h1>
+    </header>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+
+
+      <input type="text" v-model="enteredValue"/>      
+
+      <button @click="addGoal">Add Goal</button>
+
+      <p v-if="goals.length===0">No goals have been added yet - please start adding some!</p>
+
+        <!-- V-FOR WITH ARRAYS
+          
+                -goal can be anything shakeandbake/uncleBob etc
+        
+                -goal refers to every goal in the goals array
+                
+                -Does not render the list afresh ; only renders the last item added to the list     
+        
+                -output single item using goal
+        
+                -We can get the index of the elemnt in the array using a second parameter in the goal
+        
+                -This can be named anything ; index , id , key
+                e.g. ( goal , index )
+        
+                -We can also output the index if we want to:
+        
+            
+                
+                -->
+
+      <ul v-else>
+       <li v-for="(goal , index) in goals">{{ goal }} - {{ index }}</li>
+      </ul>
+
+
+      <!-- V-FOR WITH OBJECTS
+
+         -We can also loop through objects!!!!!!!!!!! not just arrays
+
+         -We can also get the keynames of the object by wrapping people with parenthesis and add a key as the second parameter
+
+         -We can also get the index though raley in objects but yeah if we wanted to
+
+
+       -->
+
+       <ul>
+         <li v-for="(value , key , index ) in peoples">{{ key }} : {{ value }} - {{ index }}</li>
+       </ul>
+
+
+      <!-- V-FOR WITH NUMBERS
+
+         -We can also loop through numbers
+              
+       -->
+
+       <ul>
+         <li v-for="num in 10">{{ num  }}</li>
+       </ul>
+
+    </section>
+  </body>
+</html>
