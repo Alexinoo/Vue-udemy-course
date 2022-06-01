@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Course Goals</h1>
+    </header>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+
+      <!--  DATA-BINDING
+        -listen for the user input and bind it with v-model directive
+
+        .e.g. v-model = "enteredValue"
+
+        -We can also use v-on:input = "enteredValue"
+
+        -OR @input = "enteredValue"
+       -->
+      <input type="text" v-model="enteredValue"/>
+
+
+
+      <!-- EVENT-BINDING
+
+        -Add a click event and the method to execute once that event is fired
+        e.g. @click="addGoal" OR v-on:click="addGoal"
+
+        -Add addGoal() to methods : {}
+
+        -Push the entered value into goals []
+        e.g.  this.goals.push(this.enteredValue)
+
+       -->
+
+      <button @click="addGoal">Add Goal</button>
+
+
+
+      <!--  V-IF , V-ELSE-IF , V-ELSE - Used by Vue to control which parts of HTML should be rendered by Vue
+
+        
+        -Use v-if directive to check if goals[] is empty - show the paragraph below
+
+        - v-if can be used in all conditions that return truthy/falsy values
+
+        -You can also combine multiple if statements
+        e.g. v-if="goals.length===0" &&
+                v-if="goals.length===0" ||
+
+        - You can also point to a computed-property / data-property or a method as long as they return a truthy/falsy value
+       -->
+
+
+      <p v-if="goals.length===0">No goals have been added yet - please start adding some!</p>
+
+
+
+      <!-- Check  if there is an item in goals array and render the ul list-->
+      <ul v-else-if="goals.length > 0 ">
+        <li>Goal</li>
+      </ul>
+
+      <!-- We can also use v-else  - Though not ideal in this example since we can only expect a -ve which cannot occur -->
+      <p v-else>...</p>
+
+
+      <!-- GOTCHAS
+
+        v-else can only be used  on an elemnt that comes after an element with v-if
+
+        e.g. WONT WORK
+        <p v-if="goals.length===0">No goals have been added yet - please start adding some!</p>
+        <p>...</p>
+        <ul v-else="goals.length > 0">
+               <li>Goal</li>
+        </ul> 
+       -->
+
+    </section>
+  </body>
+</html>
