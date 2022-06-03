@@ -23,7 +23,8 @@ const app = Vue.createApp({
 
     -  component() - Takes in 2 params
 
-        -1 . A unique identifier for the component - MUST NOT BE A HTML ELEMENT LIKE h2, - Needs to be a custom name
+        -1 . A unique identifier for the component - MUST NOT BE A HTML ELEMENT LIKE h2, 
+                - Needs to be a custom name
         -2. A configuration object
         
     -The config object takes in a template property - i.e Section to be controlled by the component - This can be a whole part of a HTML document `<section> </section`
